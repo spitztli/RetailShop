@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
     var heute = DateTime.Now.DayOfWeek;
 }
-<div class="col-4">
+<div class="col-4" style="display: inline-grid">
     <div class="d-flex flex-row bg-dark  text-white">
         <div class="p-2" style="flex:0 0 20%">
             Wer
@@ -32,8 +32,12 @@
             </div>
         }
 </div>
-
-<div class="col-3">I'm a flexbox container!</div>
+<div class="col-3" style="display: inline-grid">
+    <h4>Ämtliplan Anzeige</h4>
+</div>
+<div class="col-3" style="display: inline-grid">
+    <h4>Rankingliste Anzeige</h4>
+</div>
 
 <div class="row align-items-end">
     @if (heute == DayOfWeek.Sunday || heute == DayOfWeek.Thursday)
