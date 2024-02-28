@@ -2,8 +2,11 @@
 Das Dashboard wurde neu erstellt wegen wechseln von CSV Datei auf SQLite. 
 
 Todo:
+
 Es fehlen noch die Kommentare.
+
 Besser Design und Positionieren.
+
 Erstellen:
 - Rankingliste
 - Geburtstag 
