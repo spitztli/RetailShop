@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var heute = DateTime.Now.DayOfWeek;
+}
+<div class="col-4">
+    <div class="d-flex flex-row bg-dark  text-white">
+        <div class="p-2" style="flex:0 0 20%">
+            Wer
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            Zeit
+        </div>
+        <div class="p-2" style="flex:0 0 25%">
+            Options
+        </div>
+    </div>
+    @foreach (var item in Model.Mlist) 
+        {
+        <div class="d-flex flex-row border-left border-right border-bottom border-primary">
+            <div class="p-2" style="flex:0 0 20%">
+                @item.NameOne, @item.NameTwo
+            </div>
+            <div class="p-2" style="flex:1 0 auto">
+                @item.Time
+            </div>
+            <form method="post" class="p-2 btn-group" style="flex:0 0 25%" role="group">
+                <a class="btn btn-primary btn-sm" asp-page="./Mittagsliste/Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-page="./Mittagsliste/Delete" asp-route-id="@item.Id">Löschen</a>
+                </form>
+            </div>
+        }
+</div>
+
+<div class="col-3">I'm a flexbox container!</div>
+
+<div class="row align-items-end">
+    @if (heute == DayOfWeek.Sunday || heute == DayOfWeek.Thursday)
+    {
+        <h1 class="pulser"><strong>!!Container rausstellen!!</strong></h1>
+    }
+    else
+    {
+        <p>Container nicht rausstellen</p>
+    }
+</div>

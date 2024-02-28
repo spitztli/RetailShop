@@ -1,0 +1,66 @@
+﻿
+
+@page
+@model RetailShop.Pages.Mittagsliste.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    
+}
+
+<h1>Erstellen</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input asp-for="Mlist.NameOne" class="form-control" />
+                <span asp-validation-for="Mlist.NameOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input asp-for="Mlist.NameTwo" class="form-control" />
+                <span asp-validation-for="Mlist.NameTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mlist.Time" class="control-label"></label>
+                <input asp-for="Mlist.Time" class="form-control" />
+                <span asp-validation-for="Mlist.Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-page="/Index">zurück</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.ModulMlist != null && Model.ModulMlist.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Wer</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ModulMlist)
+            {
+                <tr>
+                    <td>@item.NameOne und @item.NameTwo</td>
+                    <td>@item.Time</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

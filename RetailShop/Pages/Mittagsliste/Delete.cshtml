@@ -1,0 +1,39 @@
+﻿@page
+@model RetailShop.Pages.Mittagsliste.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Löschen</h1>
+
+<h3>Bist du sicher?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label>Wer</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mlist.NameOne)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Wer</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mlist.NameTwo)
+        </dd>
+        <dt class="col-sm-2">
+            <label>Zeit</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mlist.Time)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Mlist.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger"/> 
+        <a class="btn btn-primary" asp-page="/Index">zurück</a>
+    </form>
+</div>
