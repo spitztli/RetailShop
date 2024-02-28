@@ -16,5 +16,6 @@ Login erstellen für das bearbeiten von:
   - Rankingliste
   - Geburtstag 
   - Ämtliplan
+    
 Dies kann nur vom Admin gesehen und bearbeitet werden!
 
