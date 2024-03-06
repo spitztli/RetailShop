@@ -3,13 +3,15 @@
 @{
     ViewData["Title"] = "Home page";
     var heute = DateTime.Now.DayOfWeek;
+    
+
 }
-<div class="col-4" style="display: inline-grid">
+<div class="col-5" style="display: inline-grid">
     <div class="d-flex flex-row bg-dark  text-white">
-        <div class="p-2" style="flex:0 0 20%">
+        <div class="p-2" style="flex:0 0 35%">
             Wer
         </div>
-        <div class="p-2" style="flex:1 0 auto">
+        <div class="p-2" style="flex:0 0 45%">
             Zeit
         </div>
         <div class="p-2" style="flex:0 0 25%">
@@ -19,26 +21,55 @@
     @foreach (var item in Model.Mlist) 
         {
         <div class="d-flex flex-row border-left border-right border-bottom border-primary">
-            <div class="p-2" style="flex:0 0 20%">
+            <div class="p-2" style="flex:0 0 35%">
                 @item.NameOne, @item.NameTwo
             </div>
             <div class="p-2" style="flex:1 0 auto">
                 @item.Time
             </div>
-            <form method="post" class="p-2 btn-group" style="flex:0 0 25%" role="group">
-                <a class="btn btn-primary btn-sm" asp-page="./Mittagsliste/Edit" asp-route-id="@item.Id">Edit</a>
-                <a class="btn btn-danger btn-sm" asp-page="./Mittagsliste/Delete" asp-route-id="@item.Id">Löschen</a>
+                <form method="post" class="p-2 btn-group" style="flex:0 0 25%" role="group">
+                    <a class="btn btn-primary btn-sm" asp-page="./Mittagsliste/Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-danger btn-sm" asp-page="./Mittagsliste/Delete" asp-route-id="@item.Id">Löschen</a>
                 </form>
             </div>
         }
 </div>
+
+
+<!--Ämtliplan-->
 <div class="col-3" style="display: inline-grid">
     <h4>Ämtliplan Anzeige</h4>
 </div>
+
+
+<!--Rankingliste-->
 <div class="col-3" style="display: inline-grid">
     <h4>Rankingliste Anzeige</h4>
 </div>
 
+
+<!--Geburtstag Anzeige-->
+<div class="row align-items-end">
+    @if (Model.geburtstagskind.Count > 0)
+    {
+        <ul>
+            @foreach (var person in Model.geburtstagskind)
+            {
+                <li>Happy Birthday, @person.Name!</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Heute hat niemand Geburtstag.</p>
+    }
+</div>
+
+
+
+
+
+<!--Container Meldung-->
 <div class="row align-items-end">
     @if (heute == DayOfWeek.Sunday || heute == DayOfWeek.Thursday)
     {
