@@ -47,4 +47,12 @@ Main Seite (
   - Bearbeiten oder Löschen der Pläne
   )
   
-  
+
+
+
+Journal:
+- SQL Datan bank überarbeiten 14.03.2024
+  Neue Datenbank erstellen (Mitarbeiter)
+  Geburtstag Liste mit der neue DB Mitarbeiter anpassen.
+
+
