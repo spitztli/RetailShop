@@ -1,0 +1,38 @@
+﻿@page
+@model RetailShop.Pages.Personal.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Mitarbeiter</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mitarbeiter.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mitarbeiter.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mitarbeiter.Vorname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mitarbeiter.Vorname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mitarbeiter.Geburtstag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mitarbeiter.Geburtstag)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Mitarbeiter.Id">Edit</a>
+    <a class="btn btn-secondary" asp-page="Index">Zurück</a>
+    
+</div>

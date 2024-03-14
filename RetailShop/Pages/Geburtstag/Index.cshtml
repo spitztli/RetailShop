@@ -8,34 +8,35 @@
 <h1>Burzeltag</h1>
 
 <p>
-    <a class="btn btn-success" asp-page="Create">Create New</a>
+    <a class="btn btn-success btn-sm" asp-page="Create">Hinzufügen</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Glist[0].Name)
+                @Html.DisplayNameFor(model => model.Mitarbeiter[0].Vorname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Glist[0].Geburtstag)
+                @Html.DisplayNameFor(model => model.Mitarbeiter[0].Geburtstag)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Glist) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Geburtstag)
-            </td>
-            <td>
-                <a class="btn btn-primary btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Mitarbeiter)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vorname)
+                </td>
+                <td>
+                    @item.Geburtstag.ToString("dd.MM.yyyy")
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> 
+                    <a class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@item.Id">Löschen</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -15,6 +15,6 @@ namespace RetailShop.Data
         }
 
         public DbSet<RetailShop.Models.Mlist> Mlist { get; set; } = default!;
-        public DbSet<RetailShop.Models.Glist> Glist { get; set; } = default!;
+        public DbSet<RetailShop.Models.Mitarbeiter> Mitarbeiter { get; set; } = default!;
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RetailShop.Data;
 using RetailShop.Models;
 
-namespace RetailShop.Pages.Geburtstag
+namespace RetailShop.Pages.Personal
 {
     public class IndexModel : PageModel
     {

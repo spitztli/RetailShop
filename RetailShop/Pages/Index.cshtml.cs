@@ -16,10 +16,8 @@ namespace RetailShop.Pages
         }
 
         public IList<Mlist> Mlist { get; set; } = default!;
-        /*
-        public IList<Glist> Glist { get; set; } = default!;
-        */
-        public IList<Glist> geburtstagskind { get; set; } = default!;
+        
+        public IList<Mitarbeiter> Mitarbeiter { get; set; } = default!;
 
 
 
@@ -28,13 +26,12 @@ namespace RetailShop.Pages
             Mlist = await _context.Mlist.ToListAsync();
 
             var heute = DateTime.Today;
-            geburtstagskind = await _context.Glist
+            Mitarbeiter = await _context.Mitarbeiter
                 .Where(p => p.Geburtstag.Month == heute.Month && p.Geburtstag.Day == heute.Day)
                 .ToListAsync();
 
-            /*
-            Glist = await _context.Glist.ToListAsync(); 
-            */
+
+           
         }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using RetailShop.Data;
 using RetailShop.Models;
 
-namespace RetailShop.Pages.Geburtstag
+namespace RetailShop.Pages.Personal
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace RetailShop.Pages.Geburtstag
         }
 
         [BindProperty]
-        public Glist Glist { get; set; } = default!;
+        public Mitarbeiter Mitarbeiter { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace RetailShop.Pages.Geburtstag
                 return Page();
             }
 
-            _context.Glist.Add(Glist);
+            _context.Mitarbeiter.Add(Mitarbeiter);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

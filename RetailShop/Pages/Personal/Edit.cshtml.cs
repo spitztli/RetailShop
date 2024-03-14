@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using RetailShop.Data;
 using RetailShop.Models;
 
-namespace RetailShop.Pages.Geburtstag
+namespace RetailShop.Pages.Personal
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace RetailShop.Pages.Geburtstag
         }
 
         [BindProperty]
-        public Glist Glist { get; set; } = default!;
+        public Mitarbeiter Mitarbeiter { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +30,12 @@ namespace RetailShop.Pages.Geburtstag
                 return NotFound();
             }
 
-            var glist =  await _context.Glist.FirstOrDefaultAsync(m => m.Id == id);
-            if (glist == null)
+            var mitarbeiter =  await _context.Mitarbeiter.FirstOrDefaultAsync(m => m.Id == id);
+            if (mitarbeiter == null)
             {
                 return NotFound();
             }
-            Glist = glist;
+            Mitarbeiter = mitarbeiter;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace RetailShop.Pages.Geburtstag
                 return Page();
             }
 
-            _context.Attach(Glist).State = EntityState.Modified;
+            _context.Attach(Mitarbeiter).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace RetailShop.Pages.Geburtstag
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GlistExists(Glist.Id))
+                if (!MitarbeiterExists(Mitarbeiter.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace RetailShop.Pages.Geburtstag
             return RedirectToPage("./Index");
         }
 
-        private bool GlistExists(int id)
+        private bool MitarbeiterExists(int id)
         {
-            return _context.Glist.Any(e => e.Id == id);
+            return _context.Mitarbeiter.Any(e => e.Id == id);
         }
     }
 }

@@ -1,0 +1,47 @@
+﻿@page
+@model RetailShop.Pages.Personal.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Personal</h1>
+
+<p>
+    <a class="btn btn-success" asp-page="Create">Hinzufügen</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Mitarbeiter[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mitarbeiter[0].Vorname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mitarbeiter[0].Geburtstag)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Mitarbeiter) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vorname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Geburtstag)
+            </td>
+            <td>
+                <a class="btn btn-primary btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@item.Id">Löschen</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

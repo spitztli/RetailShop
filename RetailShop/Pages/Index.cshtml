@@ -6,6 +6,8 @@
     
 
 }
+
+<!--Mittagsliste Anzeige-->
 <div class="col-5" style="display: inline-grid">
     <div class="d-flex flex-row bg-dark  text-white">
         <div class="p-2" style="flex:0 0 35%">
@@ -50,12 +52,12 @@
 
 <!--Geburtstag Anzeige-->
 <div class="row align-items-end">
-    @if (Model.geburtstagskind.Count > 0)
+    @if (Model.Mitarbeiter.Count > 0)
     {
         <ul>
-            @foreach (var person in Model.geburtstagskind)
+            @foreach (var person in Model.Mitarbeiter)
             {
-                <li>Happy Birthday, @person.Name!</li>
+                <h3>Happy Birthday, @person.Name!</h3>
             }
         </ul>
     }
@@ -71,12 +73,8 @@
 
 <!--Container Meldung-->
 <div class="row align-items-end">
-    @if (heute == DayOfWeek.Sunday || heute == DayOfWeek.Thursday)
+    @if (heute == DayOfWeek.Monday || heute == DayOfWeek.Thursday)
     {
         <h1 class="pulser"><strong>!!Container rausstellen!!</strong></h1>
-    }
-    else
-    {
-        <p>Container nicht rausstellen</p>
     }
 </div>

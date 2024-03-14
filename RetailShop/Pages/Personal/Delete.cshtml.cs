@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RetailShop.Data;
 using RetailShop.Models;
 
-namespace RetailShop.Pages.Geburtstag
+namespace RetailShop.Pages.Personal
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace RetailShop.Pages.Geburtstag
         }
 
         [BindProperty]
-        public Glist Glist { get; set; } = default!;
+        public Mitarbeiter Mitarbeiter { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,15 +29,15 @@ namespace RetailShop.Pages.Geburtstag
                 return NotFound();
             }
 
-            var glist = await _context.Glist.FirstOrDefaultAsync(m => m.Id == id);
+            var mitarbeiter = await _context.Mitarbeiter.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (glist == null)
+            if (mitarbeiter == null)
             {
                 return NotFound();
             }
             else
             {
-                Glist = glist;
+                Mitarbeiter = mitarbeiter;
             }
             return Page();
         }
@@ -49,11 +49,11 @@ namespace RetailShop.Pages.Geburtstag
                 return NotFound();
             }
 
-            var glist = await _context.Glist.FindAsync(id);
-            if (glist != null)
+            var mitarbeiter = await _context.Mitarbeiter.FindAsync(id);
+            if (mitarbeiter != null)
             {
-                Glist = glist;
-                _context.Glist.Remove(Glist);
+                Mitarbeiter = mitarbeiter;
+                _context.Mitarbeiter.Remove(Mitarbeiter);
                 await _context.SaveChangesAsync();
             }
 
