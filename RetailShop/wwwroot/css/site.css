@@ -53,7 +53,7 @@ body {
 
 
 
-/* Container Signal*/
+/* Container Alarm*/
 .pulser {
     width: 300px;
     height: 120px;
@@ -112,7 +112,7 @@ body {
 .Namecol {
     background-color: #A9EB7C;
     border: 5px solid lightgoldenrodyellow;
-    
+    font-family: 'Lato', sans-serif
 }
 
 .Buttoncol {
@@ -120,12 +120,41 @@ body {
     width: 50px;
 }
 
+.col-5 {
+    flex: 0 0 auto;
+    width: 32%;
+}
 
 
+/*Ämtliplan*/
 
+.tg {
+    border: 5px solid lightgoldenrodyellow;
+    
+}
 
+.tg-gozu {
+    background-color: #4885E0;
+    border: 5px solid lightgoldenrodyellow;
+}
 
+.tg-s6z2 {
+    background-color: #BCCCDB;
+    border: 5px solid lightgoldenrodyellow;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    width: 250px;
+}
 
+.tg-031e {
+    background-color: #BCCCDB;
+    border: 5px solid lightgoldenrodyellow;
+    padding: 10px;
+    width: 200px;
+}
+
+.Schachtelgro {
+}
 
 
 
