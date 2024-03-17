@@ -35,7 +35,8 @@ Geburtstag Index !Admin! (
 
 Ämtliplan:
 Main Seite (
-  - Anzeige erstellen für die Aktuelle Woche
+  - Datum bei der Liste anzeigen.
+  - Anzeige erstellen für die Aktuelle Woche (50% erledigt) 
   - Mitarbeiter sind in der lage die Ausgeführte arbeiten zu bestätigen. (0% / 50/ 100%)
   - Kleine Anzeige erstellen für die Errinerung der nächsten Grp
   )
@@ -54,9 +55,15 @@ Personal:
 
 
 Journal:
-- SQL Datan bank überarbeiten 14.03.2024
+
+14.03.2024
+- SQL Datan bank überarbeiten 
   Neue Datenbank erstellen (Personal)
   Geburtstag Liste mit der neue DB Mitarbeiter anpassen.
   Neue Personal Page (Wird aber nur für Admin zugänglich sein)
+
+17.03.2024 
+- Mittags Anzeige verändert
+- Ämtliplan Anzeige erstellt
 
 
