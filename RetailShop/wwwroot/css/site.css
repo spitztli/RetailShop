@@ -17,15 +17,43 @@ html {
   min-height: 100%;
 }
 
+/*Body*/
 body {
   margin-bottom: 60px;
 }
+
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 100%;
+}
+
 
 .pb-3 {
     padding-bottom: 1rem !important;
     margin-top: 10px;
 }
 
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: lightgoldenrodyellow;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* Container Signal*/
 .pulser {
     width: 300px;
     height: 120px;
@@ -61,6 +89,47 @@ body {
     z-index: -1;
 }
 
+
+/*Mittags Tabel*/
+.Mkomplett {
+    width: 600px;
+    border: 5px solid lightgoldenrodyellow;
+    text-align: center;
+}
+
+
+.Mtabel {
+    background-color: gold;
+    color: white;
+    border: 5px solid lightgoldenrodyellow;
+}
+
+.Zeitcol {
+    background-color: #AFE989;
+    border: 5px solid lightgoldenrodyellow;
+    
+}
+.Namecol {
+    background-color: #A9EB7C;
+    border: 5px solid lightgoldenrodyellow;
+    
+}
+
+.Buttoncol {
+    background-color: #B5EB8E;
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
 .align-items-end {
     margin-top: 10%;
     align-items: flex-end !important;
@@ -73,3 +142,6 @@ button:not(:disabled),
     cursor: pointer;
     margin: 10px
 }
+
+
+
