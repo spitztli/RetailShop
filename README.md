@@ -18,7 +18,7 @@ Login erstellen für das bearbeiten von:
 Dies kann nur vom Admin gesehen und bearbeitet werden!
 
 Mittagsliste:
-  - Falls es zu einer Bearbeitung kommt der List, soll es einen Eintrag in eine CSV Datei geben(Abfrage Wer es bearbeiter hat)
+  - Falls jemand den Aktuelle Mittags Plan überarbeitet, soll es einen Eintrag in eine CSV Datei geben(Abfrage Wer es bearbeiter hat)
   - Selbst löschung der Liste nach 19:00
 
 
@@ -46,13 +46,17 @@ Main Seite (
   - Anzeige für die Erstellten Pläne
   - Bearbeiten oder Löschen der Pläne
   )
-  
+
+Personal:
+  - Hinzufügen von Img
+  - Score erstellen für die Erldigten Ämtli arbeiten
 
 
 
 Journal:
 - SQL Datan bank überarbeiten 14.03.2024
-  Neue Datenbank erstellen (Mitarbeiter)
+  Neue Datenbank erstellen (Personal)
   Geburtstag Liste mit der neue DB Mitarbeiter anpassen.
+  Neue Personal Page (Wird aber nur für Admin zugänglich sein)
 
 
